@@ -1,0 +1,15 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "SupplyChain Pro",
+  "description": "SupplyChain Pro \u2014 Delivery logistics and route optimization software. AI-powered dispatch, real-time tracking, and fleet management.",
+  "url": "https://franciscoderek7.github.io/supplychain-pro",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "USD",
+    "lowPrice": "99",
+    "highPrice": "2499"
+  }
+}
