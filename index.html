@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SupplyChain Pro | Intelligent Logistics & Route Optimization</title>
+    <meta name="description" content="SupplyChain Pro — AI-powered route optimization, driver management, and blockchain-verified supply chain tracking.">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root{--primary:#3b82f6;--primary-light:#60a5fa;--dark:#0b0f1a;--card:#111827;--border:#1f2937;--text:#f1f5f9;--text2:#94a3b8;--green:#10b981;--chain:#6366f1}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--text);line-height:1.6}
+        .container{max-width:1100px;margin:0 auto;padding:0 24px}
+        nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,15,26,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:16px 0}
+        nav .container{display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.2rem;color:var(--primary-light);display:flex;align-items:center;gap:8px}
+        .logo span{opacity:0.5}
+        .nav-links{display:flex;gap:24px;list-style:none}
+        .nav-links a{color:var(--text2);text-decoration:none;font-size:0.85rem;transition:color 0.2s}
+        .nav-links a:hover{color:var(--primary-light)}
+        .hero{padding:150px 0 80px;text-align:center}
+        .hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;margin-bottom:20px;background:linear-gradient(135deg,var(--primary-light),var(--chain));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero p{color:var(--text2);max-width:550px;margin:0 auto 40px;font-size:1.05rem}
+        .btn{display:inline-block;padding:12px 28px;background:var(--primary);color:white;border-radius:8px;text-decoration:none;font-weight:500;font-size:0.9rem;transition:all 0.2s}
+        .btn:hover{background:var(--primary-light);transform:translateY(-2px)}
+        .btn-outline{background:transparent;border:1px solid var(--border);color:var(--text)}
+        .btn-outline:hover{border-color:var(--primary);background:rgba(59,130,246,0.05)}
+        .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        section{padding:80px 0}
+        .section-title{font-family:'Space Grotesk',sans-serif;font-size:1.8rem;text-align:center;margin-bottom:50px}
+        .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+        .feature{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px;transition:border-color 0.3s}
+        .feature:hover{border-color:var(--primary)}
+        .feature .icon{font-size:1.8rem;margin-bottom:12px}
+        .feature h3{font-family:'Space Grotesk',sans-serif;font-size:1rem;margin-bottom:8px}
+        .feature p{color:var(--text2);font-size:0.85rem}
+        .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+        .price-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:32px;text-align:center;transition:all 0.3s}
+        .price-card:hover{border-color:var(--primary);transform:translateY(-4px)}
+        .price-card.featured{border-color:var(--primary);position:relative}
+        .price-card.featured::before{content:'POPULAR';position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--primary);color:white;padding:2px 12px;border-radius:10px;font-size:0.65rem;font-weight:600}
+        .price-card h3{font-family:'Space Grotesk',sans-serif;margin-bottom:8px}
+        .price-card .price{font-size:2.2rem;font-weight:700;color:var(--primary-light);margin:12px 0}
+        .price-card .price span{font-size:0.9rem;color:var(--text2);font-weight:400}
+        .price-card ul{list-style:none;text-align:left;margin:20px 0}
+        .price-card li{padding:6px 0;font-size:0.85rem;color:var(--text2)}
+        .price-card li::before{content:'✓ ';color:var(--green)}
+        .workflow{display:flex;justify-content:center;gap:0;flex-wrap:wrap;margin-top:30px}
+        .workflow-step{text-align:center;padding:20px;position:relative;flex:1;min-width:150px}
+        .workflow-step::after{content:'→';position:absolute;right:-5px;top:50%;transform:translateY(-50%);color:var(--primary);font-size:1.2rem}
+        .workflow-step:last-child::after{display:none}
+        .workflow-step .step-num{width:36px;height:36px;border-radius:50%;background:var(--primary);color:white;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:0.85rem;font-weight:600}
+        .workflow-step .step-label{font-size:0.8rem;color:var(--text2)}
+        footer{border-top:1px solid var(--border);padding:30px 0;text-align:center}
+        footer p{color:var(--text2);font-size:0.8rem}
+        footer a{color:var(--primary-light);text-decoration:none}
+        @media(max-width:768px){.nav-links{display:none}.features{grid-template-columns:1fr}.pricing-grid{grid-template-columns:1fr}.workflow-step::after{display:none}}
+    </style>
+</head>
+<body>
+    <nav><div class="container"><div class="logo">🔗 SupplyChain<span>Pro</span></div><ul class="nav-links"><li><a href="#features">Features</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Intelligent Logistics, Optimized Delivery</h1>
+            <p>AI-powered route optimization, real-time driver management, and blockchain-verified supply chain tracking for modern logistics operations.</p>
+            <div class="hero-btns">
+                <a href="#pricing" class="btn">View Pricing</a>
+                <a href="#features" class="btn btn-outline">See Features</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <h2 class="section-title">Platform Features</h2>
+            <div class="features">
+                <div class="feature"><div class="icon">🗺️</div><h3>Route Optimization</h3><p>AI calculates optimal routes considering traffic, weather, delivery windows, and vehicle capacity. Reduce fuel costs by 30%.</p></div>
+                <div class="feature"><div class="icon">👤</div><h3>Driver Management</h3><p>Real-time GPS tracking, performance scoring, automated scheduling, and compliance monitoring for your entire fleet.</p></div>
+                <div class="feature"><div class="icon">🔗</div><h3>Blockchain Verification</h3><p>Immutable delivery records, chain-of-custody tracking, and tamper-proof documentation for regulatory compliance.</p></div>
+                <div class="feature"><div class="icon">📊</div><h3>Analytics Dashboard</h3><p>Real-time KPIs: on-time delivery rate, cost per mile, driver utilization, and customer satisfaction scores.</p></div>
+                <div class="feature"><div class="icon">🔔</div><h3>Smart Alerts</h3><p>Automated notifications for delays, route deviations, maintenance needs, and compliance violations.</p></div>
+                <div class="feature"><div class="icon">🔌</div><h3>API Integrations</h3><p>Connect with Shopify, WooCommerce, SAP, Oracle, and 50+ platforms via REST API and webhooks.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="workflow">
+                <div class="workflow-step"><div class="step-num">1</div><div class="step-label">Import Orders</div></div>
+                <div class="workflow-step"><div class="step-num">2</div><div class="step-label">Optimize Routes</div></div>
+                <div class="workflow-step"><div class="step-num">3</div><div class="step-label">Assign Drivers</div></div>
+                <div class="workflow-step"><div class="step-num">4</div><div class="step-label">Track Live</div></div>
+                <div class="workflow-step"><div class="step-num">5</div><div class="step-label">Verify & Report</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <div class="container">
+            <h2 class="section-title">Pricing</h2>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Starter</h3>
+                    <div class="price">$299<span>/mo</span></div>
+                    <ul><li>Up to 50 deliveries/day</li><li>5 driver accounts</li><li>Basic route optimization</li><li>GPS tracking</li><li>Email support</li></ul>
+                    <a href="#contact" class="btn" style="width:100%">Get Started</a>
+                </div>
+                <div class="price-card featured">
+                    <h3>Growth</h3>
+                    <div class="price">$799<span>/mo</span></div>
+                    <ul><li>Up to 500 deliveries/day</li><li>25 driver accounts</li><li>Advanced AI routing</li><li>Blockchain verification</li><li>API access</li><li>Priority support</li></ul>
+                    <a href="#contact" class="btn" style="width:100%">Get Started</a>
+                </div>
+                <div class="price-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">$2,499<span>/mo</span></div>
+                    <ul><li>Unlimited deliveries</li><li>Unlimited drivers</li><li>Custom integrations</li><li>Dedicated account manager</li><li>SLA guarantee</li><li>On-premise option</li></ul>
+                    <a href="#contact" class="btn" style="width:100%">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="text-align:center">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <p style="color:var(--text2);margin-bottom:20px">Ready to optimize your supply chain?</p>
+            <p style="color:var(--text2)">📞 705-307-8080 &nbsp;|&nbsp; ✉️ franciscoderek7@gmail.com</p>
+        </div>
+    </section>
+
+    <footer><div class="container"><p>&copy; 2026 SupplyChain Pro — A <a href="https://franciscoderek7.github.io/francisco-holdings/">Francisco Holdings</a> Company</p></div></footer>
+</body>
+</html>
